@@ -8,4 +8,5 @@ class ChromeDriverManager(DriverManager):
         super().__init__()
 
     def create_driver(self):
-        self.driver = webdriver.Chrome(executable_path="../webdrivers/chromedriver.exe")
+        self.driver = webdriver.Chrome(
+            executable_path="./webdrivers/chromedriver.exe")
