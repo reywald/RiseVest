@@ -7,9 +7,9 @@ from patterns.driver_manager import DriverManager
 class PageElement:
     """ The base page element from which other page elements inherit """
 
-    def __init__(self, driver: DriverManager, test_class: TestCase) -> None:
+    def __init__(self, driver_mgr: DriverManager, test_class: TestCase) -> None:
         """Assign elements to the page members"""
-        self.driver = driver
+        self.driver_manager = driver_mgr
         self.test_class = test_class
         self.by = By
 

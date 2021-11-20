@@ -9,20 +9,20 @@ class MenuSection(PageElement):
         """Assign elements to the page members"""
         super().__init__(driver, test_class)
 
-        self.page_url = self.driver.current_url
-        self.home_link = self.driver.find_element(self.by.XPATH, "//nav/a[1]")
-        self.investment_link = self.driver.find_element(self.by.XPATH, "//nav/a[2]")
-        self.about_link = self.driver.find_element(self.by.XPATH, "//nav/a[3]")
-        self.faqs_link = self.driver.find_element(self.by.XPATH, "//nav/a[4]")
-        self.blog_link = self.driver.find_element(self.by.XPATH, "//nav/a[5]")
+        self.page_url = self.driver_manager.current_url
+        self.home_link = self.driver_manager.find_element(self.by.XPATH, "//nav/a[1]")
+        self.investment_link = self.driver_manager.find_element(self.by.XPATH, "//nav/a[2]")
+        self.about_link = self.driver_manager.find_element(self.by.XPATH, "//nav/a[3]")
+        self.faqs_link = self.driver_manager.find_element(self.by.XPATH, "//nav/a[4]")
+        self.blog_link = self.driver_manager.find_element(self.by.XPATH, "//nav/a[5]")
 
         # Sub-menus
         # self.products_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav div.z-50 span.main-nav-item > span")
-        self.products_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav div.z-50 > div.cursor-pointer")
-        self.stocks_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(1)")
-        self.real_estate_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(2)")
-        self.fixed_income_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(3)")
-        self.build_wealth_link = self.driver.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(4)")
+        self.products_link = self.driver_manager.find_element(self.by.CSS_SELECTOR, "nav div.z-50 > div.cursor-pointer")
+        self.stocks_link = self.driver_manager.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(1)")
+        self.real_estate_link = self.driver_manager.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(2)")
+        self.fixed_income_link = self.driver_manager.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(3)")
+        self.build_wealth_link = self.driver_manager.find_element(self.by.CSS_SELECTOR, "nav a.dropdown-nav-item:nth-child(4)")
 
     def validate_page(self):
         self.test_class.assertEqual("Home", self.home_link.text)
@@ -62,6 +62,6 @@ class MenuSection(PageElement):
 
     def drop_menu(self, index: int = 1):
         self.products_link.click()
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver_manager, 10).until(
             EC.element_to_be_clickable((self.by.CSS_SELECTOR, f"nav a.dropdown-nav-item:nth-child({index})"))
         )

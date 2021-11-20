@@ -9,4 +9,4 @@ class FirefoxDriverManager(DriverManager):
 
     def create_driver(self):
         self.driver = webdriver.Firefox(
-            executable_path="./webdrivers/chromedriver.exe")
+            executable_path="./webdrivers/geckodriver.exe")

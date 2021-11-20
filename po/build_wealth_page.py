@@ -30,5 +30,4 @@ class WealthPage(BasePage):
 
     def perform_action(self):
         self.wealth_form.fill_form()
-        # WebDriverWait(self.driver, 5)
         self.projection_section.verify_wealth_value("$1,309,578.71", "35")

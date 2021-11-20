@@ -6,7 +6,7 @@ from .edge_driver_manager import EdgeDriverManager
 
 
 class DriverManagerFactory:
-    
+
     def __init__(self):
         self.manager = None
 

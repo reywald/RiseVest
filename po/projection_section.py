@@ -6,9 +6,9 @@ class ProjectionSection(PageElement):
     def __init__(self, driver, test_case):
         super().__init__(driver, test_case)
 
-        self.heading = self.driver.find_element(self.by.CSS_SELECTOR, "h2.border-inputBorder")
-        self.wealth_goal = self.driver.find_element(self.by.CSS_SELECTOR, "p.text-2xl")
-        self.duration = self.driver.find_element(self.by.CSS_SELECTOR, "p.text-2xl + p")
+        self.heading = self.driver_manager.find_element(self.by.CSS_SELECTOR, "h2.border-inputBorder")
+        self.wealth_goal = self.driver_manager.find_element(self.by.CSS_SELECTOR, "p.text-2xl")
+        self.duration = self.driver_manager.find_element(self.by.CSS_SELECTOR, "p.text-2xl + p")
 
     def validate_page(self):
         self.test_class.assertEqual("Projection", self.heading.text)
