@@ -26,7 +26,7 @@ class WealthPage(BasePage):
         self.menu.validate_page()
         self.wealth_form.validate_page()
         self.test_class.assertEqual("Save for retirement in dollars", self.heading1.text)
-        print(self.heading1.text)
+        print(f"H1 tag's text: {self.heading1.text}")
 
     def perform_action(self):
         self.wealth_form.fill_form()

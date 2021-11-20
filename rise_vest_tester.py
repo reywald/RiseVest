@@ -16,9 +16,10 @@ class RiseVestTester(TestCase):
         self.home_url = "https://rise.capital"
 
         # Choices of drivers: FIREFOX, CHROME, EDGE
-        # self.driver_manager: DriverManager = DriverManagerFactory.get_manager(DriverTypes.CHROME)
+        self.driver_manager: DriverManager = DriverManagerFactory.get_manager(
+            DriverTypes.CHROME)
         # self.driver_manager: DriverManager = DriverManagerFactory.get_manager(DriverTypes.EDGE)
-        self.driver_manager: DriverManager = DriverManagerFactory.get_manager(DriverTypes.FIREFOX)
+        # self.driver_manager: DriverManager = DriverManagerFactory.get_manager(DriverTypes.FIREFOX)
         self.driver = self.driver_manager.get_driver()
         self.driver.implicitly_wait(10)
 

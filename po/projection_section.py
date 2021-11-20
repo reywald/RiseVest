@@ -18,4 +18,4 @@ class ProjectionSection(PageElement):
     def verify_wealth_value(self, goal, duration):
         self.test_class.assertEqual(goal, self.wealth_goal.text)
         self.test_class.assertEqual(f"In {duration} Years", self.duration.text)
-        print(goal)
+        print(f"Tope's goal, retiring @ 60: {goal}")
